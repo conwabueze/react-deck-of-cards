@@ -44,9 +44,16 @@ class DeckofCards extends Component {
       return <Card key={card[0]} srcImg={card[1]} altText={card[0]} />;
     });
 
+    const buttonRender =
+      this.state.remaining === 0 ? (
+        "No More Cards"
+      ) : (
+        <button onClick={this.drawCard}>Draw Card</button>
+      );
+
     return (
       <div>
-        <button onClick={this.drawCard}>Draw Card</button>
+        {buttonRender}
         {cards}
       </div>
     );
